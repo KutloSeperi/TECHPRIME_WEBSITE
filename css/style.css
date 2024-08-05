@@ -1,0 +1,727 @@
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes underlineAnimation {
+  0% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+body {
+  font-family: "Arial", sans-serif;
+  margin: 0;
+  padding-top: 11em;
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+header {
+  background-color: #000000;
+  padding: 0em 0;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+header nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30%;
+}
+header nav ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+header nav ul li {
+  margin: 0 1em;
+  position: relative;
+}
+header nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.2em;
+}
+header nav ul li a:hover {
+  color: #72A194;
+}
+header nav ul li a:hover::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 100%;
+  height: 2px;
+  background-color: #008080;
+  animation: underlineAnimation 0.3s ease;
+}
+header .floating-shapes {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+header .floating-shapes .shape {
+  position: absolute;
+  background-color: #008080;
+  border-radius: 50%;
+  opacity: 0.6;
+  pointer-events: none;
+  animation: float 5s ease-in-out infinite;
+}
+header .floating-shapes .shape:nth-child(1) {
+  width: 50px;
+  height: 50px;
+  top: 20%;
+  left: 10%;
+  animation-duration: 6s;
+}
+header .floating-shapes .shape:nth-child(2) {
+  width: 30px;
+  height: 30px;
+  top: 60%;
+  left: 30%;
+  animation-duration: 8s;
+  background-color: #00b3b3;
+}
+header .floating-shapes .shape:nth-child(3) {
+  width: 30px;
+  height: 30px;
+  top: 30%;
+  left: 0%;
+  animation-duration: 6s;
+}
+header .floating-shapes .shape:nth-child(4) {
+  width: 10px;
+  height: 10px;
+  top: 15%;
+  left: 15%;
+  animation-duration: 8s;
+  background-color: #00b3b3;
+}
+
+.floating-shape {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.shape {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-color: #008080;
+  border-radius: 50%;
+  opacity: 0.8;
+  z-index: 1;
+  animation: float 6s infinite ease-in-out;
+}
+
+.shape:nth-child(1) {
+  top: 10%;
+  left: 20%;
+  animation-duration: 5s;
+}
+
+.shape:nth-child(2) {
+  top: 40%;
+  left: 60%;
+  animation-duration: 7s;
+}
+
+.shape:nth-child(3) {
+  top: 70%;
+  left: 80%;
+  width: 60px;
+  height: 60px;
+  animation-duration: 8s;
+}
+
+section {
+  padding: 2em;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 4em;
+  padding-bottom: 2em;
+  animation: float 3s ease-in-out infinite;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+section h1,
+section h2,
+section h3 {
+  color: #008080;
+}
+section p {
+  color: #333;
+  line-height: 1.6;
+}
+
+.search-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 26em;
+}
+.search-container .search-bar {
+  padding: 0.5em 1em;
+  border: 2px solid #008080;
+  border-radius: 5px;
+  width: 250px;
+  transition: all 0.3s ease;
+}
+.search-container .search-bar:focus {
+  border-color: #72A194;
+  outline: none;
+  box-shadow: 0 0 10px rgba(114, 161, 148, 0.5);
+}
+.search-container button {
+  background-color: #008080;
+  border: none;
+  color: #fff;
+  padding: 0.5em 1em;
+  margin-left: 0.5em;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.search-container button:hover {
+  background-color: #004d4d;
+}
+
+#slide {
+  padding: auto;
+}
+#slide h1 {
+  padding: auto;
+  margin: auto;
+  margin-left: 4.6em;
+}
+#slide .email-container {
+  display: flex;
+  align-items: center;
+  margin-left: 7em;
+  margin-bottom: 2em;
+}
+
+.carousel-container {
+  position: relative;
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-banner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("path-to-banner-image.jpg") no-repeat center center;
+  background-size: cover;
+  z-index: 1;
+}
+
+.carousel {
+  width: 80%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  z-index: 2;
+  perspective: 2000px;
+}
+
+.carousel-images {
+  display: flex;
+  transition: transform 3s ease-in-out, scale 3s ease-in-out;
+}
+
+.carousel-images img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: perspective(2000px) translateZ(0);
+}
+
+.carousel-images img.active {
+  transform: perspective(2000px) translateZ(300px) rotateY(360deg);
+}
+
+#home {
+  text-align: center;
+  background-color: #fff;
+  padding: 1em 2em;
+}
+#home button {
+  background-color: #72A194;
+  border: none;
+  border-radius: 1em;
+  padding: 1em 2em;
+  color: #fff;
+  font-size: 1em;
+  cursor: pointer;
+}
+#home button:hover {
+  background-color: #5a867a;
+}
+
+#about .about-container {
+  display: flex;
+}
+#about .about-container .about-text h2 {
+  margin-left: 10em;
+}
+#about .about-image {
+  width: 100%;
+  height: 100%;
+  margin-top: 2em;
+}
+
+#about,
+#services,
+#contacts {
+  background-color: #fff;
+  margin-top: 2em;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 2em;
+}
+#about img,
+#services img,
+#contacts img {
+  padding-top: 2em;
+}
+#about p,
+#services p,
+#contacts p {
+  text-align: right;
+  padding: 1em;
+  margin-right: 2em;
+}
+#about #services,
+#services #services,
+#contacts #services {
+  background-color: #fff;
+  margin-top: 2em;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 2em;
+  overflow: hidden;
+}
+#about #services h2,
+#services #services h2,
+#contacts #services h2 {
+  text-align: center;
+  margin-bottom: 1em;
+}
+#about #services #service-description-container,
+#services #services #service-description-container,
+#contacts #services #service-description-container {
+  margin-top: 2em;
+  padding: 1em;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 100%;
+  overflow: hidden;
+}
+#about .services-container,
+#services .services-container,
+#contacts .services-container {
+  display: flex;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  height: 30em;
+  padding: 2em 0;
+}
+#about .services-container .square,
+#services .services-container .square,
+#contacts .services-container .square {
+  position: absolute;
+  top: 19em;
+  left: 2em;
+  background-color: #008080;
+  height: 4em;
+  width: 10em;
+  padding: 1em;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(-90deg);
+  transform-origin: left bottom;
+  text-align: center;
+  font-size: 1.2em;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+#about .service-item,
+#services .service-item,
+#contacts .service-item {
+  flex: 0 0 auto;
+  width: 400px;
+  margin-right: 1em;
+  background-color: #fff;
+  padding: 0;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  scroll-snap-align: start;
+  position: relative;
+  perspective: 1000px;
+  /* Perspective for 3D effect */
+}
+#about .service-item .service-card,
+#services .service-item .service-card,
+#contacts .service-item .service-card {
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+  border-radius: 5px;
+}
+#about .service-item:hover .service-card,
+#services .service-item:hover .service-card,
+#contacts .service-item:hover .service-card {
+  transform: rotateY(180deg);
+}
+#about .service-item .service-card-front,
+#about .service-item .service-card-back,
+#services .service-item .service-card-front,
+#services .service-item .service-card-back,
+#contacts .service-item .service-card-front,
+#contacts .service-item .service-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  border-radius: 5px;
+  text-align: right;
+}
+#about .service-item .service-card-front,
+#services .service-item .service-card-front,
+#contacts .service-item .service-card-front {
+  background-color: #f9f9f9;
+  display: flex;
+  flex-direction: column;
+}
+#about .service-item .service-card-back,
+#services .service-item .service-card-back,
+#contacts .service-item .service-card-back {
+  background-color: #008080;
+  transform: rotateY(180deg);
+}
+#about .service-item .service-card-back p,
+#services .service-item .service-card-back p,
+#contacts .service-item .service-card-back p {
+  color: #fff;
+  width: 20em;
+  text-align: center;
+  padding: 3em;
+}
+#about .service-item h3,
+#services .service-item h3,
+#contacts .service-item h3 {
+  margin-bottom: 0.5em;
+  color: #008080;
+  text-align: center;
+}
+#about .services-container::-webkit-scrollbar,
+#services .services-container::-webkit-scrollbar,
+#contacts .services-container::-webkit-scrollbar {
+  height: 10px;
+}
+#about .services-container::-webkit-scrollbar-thumb,
+#services .services-container::-webkit-scrollbar-thumb,
+#contacts .services-container::-webkit-scrollbar-thumb {
+  background-color: #008080;
+  border-radius: 10px;
+}
+#about h2,
+#services h2,
+#contacts h2 {
+  text-align: center;
+  margin-bottom: 1em;
+}
+#about .text,
+#services .text,
+#contacts .text {
+  display: flex;
+  justify-content: space-around;
+}
+#about .text p,
+#services .text p,
+#contacts .text p {
+  color: #008080;
+  width: 18em;
+  text-align: right;
+  font-size: 1.5em;
+}
+#about .text p span,
+#services .text p span,
+#contacts .text p span {
+  color: #333;
+}
+
+/* Define the initial hidden state */
+#services {
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: opacity 2s ease-out, transform 2s ease-out;
+}
+
+/* Define the visible state */
+#services.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.contacts-map {
+  display: flex;
+  gap: 2em;
+}
+
+.service {
+  margin-top: 2em;
+}
+.service h3 {
+  margin-bottom: 1em;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 40em;
+}
+form label {
+  margin-top: 1em;
+}
+form input,
+form textarea {
+  padding: 0.5em;
+  margin-top: 0.5em;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+form button {
+  margin-top: 1em;
+  padding: 0.5em 2em;
+  background-color: #008080;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+form button:hover {
+  background-color: #004d4d;
+}
+
+#testimonials {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+#testimonials h2 {
+  text-align: center;
+}
+#testimonials .testimonial-slider {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+#testimonials .testimonial-slider .testimonial-item {
+  min-width: 100%;
+  box-sizing: border-box;
+  padding: 20px;
+  text-align: center;
+  background: #fff;
+  border: 1px solid #ddd;
+}
+#testimonials .testimonial-slider .testimonial-item .testimonial-content p {
+  margin: 10px 0;
+}
+#testimonials .testimonial-slider .testimonial-item .testimonial-rating {
+  margin-top: 10px;
+  font-size: 1.5rem;
+  color: #008080;
+}
+#testimonials .testimonial-slider .testimonial-item .testimonial-rating .star {
+  margin: 0 2px;
+}
+#testimonials button {
+  position: absolute;
+  top: 50%;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+#testimonials button.prev {
+  left: 10px;
+}
+#testimonials button.next {
+  right: 10px;
+}
+
+footer {
+  background-color: #000000;
+  color: #fff;
+  text-align: center;
+  padding: 2em 0;
+}
+footer p {
+  margin: 0;
+}
+footer p a {
+  color: #008080;
+  text-decoration: none;
+  font-weight: bold;
+}
+footer p a:hover {
+  text-decoration: underline;
+}
+footer .social-media,
+footer .subscribe {
+  margin-top: 1em;
+}
+
+@media (max-width: 768px) {
+  .search-container {
+    flex-direction: column;
+    margin-left: 0;
+    margin-bottom: 1em;
+  }
+  .search-container .search-bar {
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 0.5em;
+  }
+  .search-container button {
+    width: 100%;
+    max-width: 300px;
+    padding: 0.5em;
+  }
+  header nav {
+    gap: 0%;
+  }
+  header nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+  header nav ul li {
+    margin: 0.5em 0;
+  }
+  #home button {
+    width: 100%;
+    padding: 1em 0;
+  }
+  #about,
+  #services,
+  #contacts {
+    padding: 1em;
+  }
+  #about .about-container,
+  #services .about-container,
+  #contacts .about-container {
+    flex-direction: column;
+  }
+  #about .about-text,
+  #about .about-image,
+  #services .about-text,
+  #services .about-image,
+  #contacts .about-text,
+  #contacts .about-image {
+    flex: 1 1 100%;
+    margin: 0;
+  }
+  #about .text p,
+  #services .text p,
+  #contacts .text p {
+    font-size: 1em;
+  }
+  #about .about-text h2,
+  #services .about-text h2,
+  #contacts .about-text h2 {
+    font-size: 1.2em;
+  }
+  #about .text,
+  #services .text,
+  #contacts .text {
+    flex-direction: column;
+    align-items: center;
+  }
+  #about .text p,
+  #services .text p,
+  #contacts .text p {
+    width: 100%;
+    text-align: center;
+    font-size: 1em;
+  }
+  .contacts-map {
+    flex-direction: column;
+    align-items: center;
+  }
+  #testimonials {
+    width: 80%;
+    overflow: hidden;
+  }
+  #testimonials .testimonial-slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+  #testimonials .testimonial-slider .testimonial-item {
+    min-width: 50%;
+    box-sizing: border-box;
+    padding: 20px;
+    text-align: center;
+    background: #f4f4f4;
+    border: 1px solid #ddd;
+  }
+  #testimonials .testimonial-slider .testimonial-item .testimonial-rating {
+    font-size: 1.5rem;
+    color: #008080;
+  }
+  #testimonials .testimonial-slider .testimonial-item .testimonial-rating .star {
+    margin: 0 2px;
+  }
+  #testimonials button {
+    position: absolute;
+    top: 50%;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+  }
+  #testimonials button.prev {
+    left: 10px;
+  }
+  #testimonials button.next {
+    right: 10px;
+  }
+}
